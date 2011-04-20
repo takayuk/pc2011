@@ -11,21 +11,25 @@ import tf_idf as tfidf
 args=sys.argv
 
 def to_wordurl(docs):
-  words_dic={}
-  tfdic=tf_idf.tf(docs)
- 
-  return tfdic.keys()
+    words_dic={}
+    tfdic=tf_idf.tf(docs)
+    
+    return tfdic.keys()
 
-with file(args[1]) as text:
-  docs=[doc.split(" ") for doc in [line.rstrip("\n") for line in text.readlines()]]
+with file(args[1]) as url_file:
+    urls=[url.strip("\n") for url in url_file.readlines()]
 
-docs=[[re.sub("[^a-zA-Z]", "", word) for word in doc] for doc in docs]
+with file(args[2]) as text:
+    docs=[doc.split(" ") for doc in [line.rstrip("\n") for line in text.readlines()]]
 
-tfdic=tfidf.tf(docs)
-dfdic=tfidf.df(tfdic)
+with file(args[3],"w") as out_file:
 
-print(len(tfdic))
-print(len(dfdic))
+
+
+    #docs=[[re.sub("[^a-zA-Z]", "", word) for word in doc] for doc in docs]
+
+#tfdic=tfidf.tf(docs)
+#dfdic=tfidf.df(tfdic)
 
 """
 wordurl=to_wordurl(docs)
