@@ -1,18 +1,18 @@
 CC = gcc
 CFLAGS = -Wall -g
 
-SRC = src/*.c
+SRC = src
+INC = src/include
 OBJ = obj
-
-INC = src/include/*.h
-
 BIN = bin
-
 LIB = lib/*.so
+
+libparser: $(SRC)/parser.c
+	$(CC) $(CFLAGS) -c $(SRC)/parser.c -I$(INC) -o $(OBJ)/$@.o
 
 libtfidf: $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC) -I$(INC) -o $(OBJ)/$@.o
 
 tfidf: $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -I$(INC) -o $(BIN)/tfidf
+	$(CC) $(CFLAGS) test_tfidf.c $(OBJ)/*.o -I$(INC) -o $(BIN)/tfidf
 

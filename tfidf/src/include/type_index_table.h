@@ -6,6 +6,7 @@ typedef struct _index_table {
   int** data;
   double** weight;
 
+  int* label;
   int* degree;
 } index_table;
 

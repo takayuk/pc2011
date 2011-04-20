@@ -8,9 +8,19 @@
  * @param[in] d ラベルリスト形式の文書集合.
  * @retval tfidf値.
  */
-int tf(int i, int j, index_table* d) {
+int tf(int w_i, int j, index_table* d) {
 
-  return 0;
+  int tf_val = 0;
+
+  int i;
+  for (i = 0; i < d->degree[j]; ++i) {
+    if (d->data[j][i] == w_i) {
+      tf_val = d->weight[j][i];
+      break;
+    }
+  }
+
+  return tf_val;
 }
 
 
