@@ -10,17 +10,7 @@
  */
 int tf(int w_i, int j, index_table* d) {
 
-  int tf_val = 0;
-
-  int i;
-  for (i = 0; i < d->degree[j]; ++i) {
-    if (d->data[j][i] == w_i) {
-      tf_val = d->weight[j][i];
-      break;
-    }
-  }
-
-  return tf_val;
+  return 0;
 }
 
 
