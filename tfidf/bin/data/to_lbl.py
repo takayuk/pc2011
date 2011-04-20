@@ -6,7 +6,7 @@ import sys
 sys.path.append(".")
 
 import re
-import tf_idf
+import tf_idf as tfidf
 
 args=sys.argv
 
@@ -21,6 +21,13 @@ with file(args[1]) as text:
 
 docs=[[re.sub("[^a-zA-Z]", "", word) for word in doc] for doc in docs]
 
+tfdic=tfidf.tf(docs)
+dfdic=tfidf.df(tfdic)
+
+print(len(tfdic))
+print(len(dfdic))
+
+"""
 wordurl=to_wordurl(docs)
 try:
   for i in xrange(wordurl.count("")):
@@ -32,4 +39,5 @@ with file(args[2],"w") as url:
   url.write(str(len(wordurl))+"\n")
   for word in wordurl:
     url.write(word+"\n")
+"""
 
