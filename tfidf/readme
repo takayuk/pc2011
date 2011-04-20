@@ -13,9 +13,10 @@ tfidf/bin/data/social_network.url
 tfidf/bin/data/social_network.lbl
 
 作成する関数は以下のとおり,
-int tfidf(const char* urlpath, const char* lblpath, tfidf_list* result);
 
-typedef struct _tfidf_list {
-  tfidf_hash word_dict;
-} tfidf_list;
+int tf(int w_i, int j, index_table* data);
+
+int df(int w_i, index_table* data);
+
+int tfidf(int w_i, int j, index_table* data);
 
