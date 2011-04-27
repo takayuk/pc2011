@@ -1,4 +1,4 @@
-#include "include/type_index_table.h"
+#include "include/tfidf.h"
 
 
 /**
@@ -18,9 +18,9 @@ double tf(int w_i, int d_j, index_table* corpus) {
  * @brief 文書集合 D(コーパス) における, 単語 w_i のDF値を求める.
  * @param[in] w_i 単語 ID.
  * @param[in] corpus ラベルリスト形式の(転置インデックス)文書集合.
- * @retval tfidf値.
+ * @retval idf値.
  */
-double df(int w_i, index_table* corpus) {
+double idf(int w_i, index_table* corpus) {
 
   return 0.0;
 }
