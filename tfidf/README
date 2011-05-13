@@ -1,0 +1,22 @@
+映画「ソーシャルネットワーク」の脚本で発生したワードすべてのtf-idf値を求める.
+
+tf-idfの定義はココなどを参考に.(Wikipedia)
+http://ja.wikipedia.org/wiki/Tf-idf
+
+オリジナルのスクリプトは,
+tfidf/bin/data/social_network
+
+スクリプトから抽出した単語リストは,
+tfidf/bin/data/social_network.url
+
+文書から単語へのインデックス(ラベルリスト)は,
+tfidf/bin/data/social_network.lbl
+
+作成する関数は以下のとおり,
+
+int tf(int w_i, int j, index_table* data);
+
+int df(int w_i, index_table* data);
+
+int tfidf(int w_i, int j, index_table* data);
+
