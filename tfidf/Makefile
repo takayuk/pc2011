@@ -5,14 +5,15 @@ SRC = src
 INC = src/include
 OBJ = obj
 BIN = bin
-LIB = lib/*.so
+LIB = lib
 
-libparser: $(SRC)/parser.c
-	$(CC) $(CFLAGS) -c $(SRC)/parser.c -I$(INC) -o $(OBJ)/$@.o
+PROGS = tfidf
 
-libtfidf: $(SRC)/tfidf.c
-	$(CC) $(CFLAGS) -c $(SRC)/tfidf.c -I$(INC) -o $(OBJ)/$@.o
+all: $(PROGS)
+clean:
+	rm $(BIN)/tfidf
+	rm $(OBJ)/*.o
 
-tfidf: $(OBJ)/*.o
-	$(CC) $(CFLAGS) test_tfidf.c $(OBJ)/*.o -I$(INC) -o $(BIN)/tfidf
+tfidf: $(SRC)/parser.c $(SRC)/tfidf.c test_tfidf.c
+	$(CC) $(CFLAGS) $(SRC)/parser.c $(SRC)/tfidf.c test_tfidf.c -I$(INC) -o $(BIN)/tfidf
 

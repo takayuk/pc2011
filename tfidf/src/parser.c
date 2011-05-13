@@ -18,6 +18,7 @@ int parse(char* path, index_table* data) {
 
   /// ここでファイルを開きます.
   FILE* fp = fopen(path, "r");
+  assert(fp);
   if (!fp) return -1;
 
   int v, w;
@@ -61,12 +62,16 @@ int parse(char* path, index_table* data) {
     }
   }
 
+  printf("read finished.\n");
+
   while ((c = fgetc(fp)) != EOF) {
     if (c != 0x0A) {
       fclose(fp);
       return -1;
     }
   }
+
+  printf("flushed.\n");
   
   /// ここでファイルを閉じます.
   fclose(fp);
