@@ -1,4 +1,5 @@
-#include "include/tfidf.h"
+
+#include <tfidf.h>
 
 
 /**
@@ -35,5 +36,16 @@ double idf(int w_i, index_table* corpus) {
 double tfidf(int w_i, index_table* corpus) {
 
   return 0.0;
+}
+
+
+/**
+ * @brief 転置インデックステーブルを作成する.
+ * @param[in] corpus ラベルリスト形式の文書集合(コーパス).
+ * @retval 転置インデックステーブル.
+ */
+index_table* inverse_index_table(index_table* corpus) {
+
+  return NULL;
 }
 

@@ -17,7 +17,7 @@ int tester(char* path) {
   assert((tf_val = tf(1552, 20, &table)) > -1);
   printf("%d\n", tf_val);
 
-  assert(tfidf(0, 0, &table) > -1.0);
+  assert(tfidf(0, &table) > -1.0);
 
   return 0;
 }

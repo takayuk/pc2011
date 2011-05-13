@@ -10,5 +10,3 @@ typedef struct _index_table {
   int* degree;
 } index_table;
 
-index_table* inverse(index_table* current_table);
-

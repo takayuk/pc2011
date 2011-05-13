@@ -1,7 +1,10 @@
 
-#include <type_label.h>
+#include "include/type_label.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <assert.h>
+#include <string.h>
+
 
 /**
  * @brief ラベルリストパーサ
